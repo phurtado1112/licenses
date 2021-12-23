@@ -1,19 +1,21 @@
 <?php
 
-namespace Database\Factories\Catalog;
+namespace Database\Factories\Process;
 
+use App\Models\Catalog\Client;
 use App\Models\Catalog\Program;
+use App\Models\Process\Assignment;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProgramFactory extends Factory
+class AssignmentFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Program::class;
+    protected $model = Assignment::class;
 
     /**
      * Define the model's default state.
@@ -23,11 +25,10 @@ class ProgramFactory extends Factory
     public function definition()
     {
         return [
-            'program_name' => $this->faker->text(20),
-            'program_version' => $this->faker->text(6),
-            'payment_date' => $this->faker->dateTime,
-            'licenses_total' => $this->faker->numberBetween(5, 10),
             'user_id' => User::factory(),
+            'client_id' => Client::factory(),
+            'program_id' => Program::factory(),
+            'invoice_date' => $this->faker->dateTime
         ];
     }
 }

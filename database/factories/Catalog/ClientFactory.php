@@ -26,7 +26,8 @@ class ClientFactory extends Factory
             'name' => $this->faker->firstName,
             'surname' => $this->faker->lastName,
             'company' => $this->faker->company,
-            'user_id' => User::all()->random()->id,
+            'user_id' => User::factory(),
+            'created_at' => now(),
         ];
     }
 }

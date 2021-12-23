@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Catalog\Client;
-use App\Models\Catalog\Program;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -18,8 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(3)->create();
 
-        $this->call(class: AsignationSeeder::class);
-        $this->call(class: Client::class);
-        $this->call(class: Program::class);
+        $this->call([
+            ClientSeeder::class,
+            ProgramSeeder::class,
+            AssignmentSeeder::class,
+            InvoiceSeeder::class,
+        ]);
     }
 }

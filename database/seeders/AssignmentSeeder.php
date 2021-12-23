@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Process\Asignation;
+use App\Models\Process\Assignment;
 use Illuminate\Database\Seeder;
 
-class AsignationSeeder extends Seeder
+class AssignmentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class AsignationSeeder extends Seeder
      */
     public function run()
     {
-        Asignation::factory(10)->create();
+        Assignment::factory(5)->create();
     }
 }

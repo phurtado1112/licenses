@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//Route::resource('client', 'App\Http\Controllers\Catalog\ClientController')

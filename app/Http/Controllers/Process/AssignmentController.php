@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Process;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAsignationRequest;
 use App\Http\Requests\UpdateAsignationRequest;
-use App\Models\Process\Asignation;
+use App\Models\Process\Assignment;
 
-class AsignationController extends Controller
+class AssignmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,10 +43,10 @@ class AsignationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Process\Asignation  $asignation
+     * @param  \App\Models\Process\Assignment  $asignation
      * @return \Illuminate\Http\Response
      */
-    public function show(Asignation $asignation)
+    public function show(Assignment $asignation)
     {
         //
     }
@@ -54,10 +54,10 @@ class AsignationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Process\Asignation  $asignation
+     * @param  \App\Models\Process\Assignment  $asignation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Asignation $asignation)
+    public function edit(Assignment $asignation)
     {
         //
     }
@@ -66,10 +66,10 @@ class AsignationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateAsignationRequest  $request
-     * @param  \App\Models\Process\Asignation  $asignation
+     * @param  \App\Models\Process\Assignment  $asignation
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAsignationRequest $request, Asignation $asignation)
+    public function update(UpdateAsignationRequest $request, Assignment $asignation)
     {
         //
     }
@@ -77,10 +77,10 @@ class AsignationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Process\Asignation  $asignation
+     * @param  \App\Models\Process\Assignment  $asignation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Asignation $asignation)
+    public function destroy(Assignment $asignation)
     {
         //
     }

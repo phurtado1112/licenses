@@ -18,10 +18,11 @@ class CreateClientsTable extends Migration
             $table->string('name', 45);
             $table->string('surname', 45);
             $table->string('doc_id', 40)->nullable();
-            $table->string('celular', 10)->nullable();
+            $table->string('cellular', 10)->nullable();
             $table->string('email', 45)->nullable();
             $table->string('company', 45);
-            $table->foreignIdFor(\App\Models\User::class)->constrained();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });

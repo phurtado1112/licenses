@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAsignationsTable extends Migration
+class CreateAssignmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateAsignationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('asignations', function (Blueprint $table) {
+        Schema::create('assignments', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class)->constrained();
-            $table->foreignIdFor(\App\Models\Catalog\Client::class)->constrained();
-            $table->foreignIdFor(\App\Models\Catalog\Program::class)->constrained();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients');
+            $table->unsignedBigInteger('program_id');
+            $table->foreign('program_id')->references('id')->on('programs');
             $table->dateTime('invoice_date');
             $table->dateTime('payment_date')->nullable();
             $table->timestamps();
